@@ -1,0 +1,90 @@
+﻿<Window x:Class="TwoToucanGame.MainWindow"  Loaded="MainWindow_Loaded"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwoToucanGame"
+        mc:Ignorable="d"
+        Title="Two Toucans" Height="900" Width="1600" WindowState="Maximized" >
+
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,400,400" ImageSource="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\Dot Texture.jpg"></ImageBrush>
+        </Grid.Background>
+
+        <WrapPanel Name="PlayersScoreButtons"></WrapPanel>
+
+        <WrapPanel Name ="CardsPlayedDisplayPanel" Margin="65,242,65,33">
+
+        </WrapPanel>
+
+
+        <Border Name ="CardImageObject" CornerRadius="20,20,20,20"  Height="400" Width="300" >
+            <Border.Background>
+                <ImageBrush x:Name="CardImage"></ImageBrush>
+            </Border.Background>
+        </Border> 
+
+
+
+        <Border VerticalAlignment="Top" Name ="StartButton" CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="92" Background="White" Margin="670,56,670,0">
+            <Button Style="{StaticResource MyButtonStyle}" FontWeight="ExtraBold" FontSize="20" FontFamily="Segoe UI" BorderThickness="0" Background="Transparent" Click="Start_Button_Click">
+                Start
+            </Button>
+        </Border>
+
+
+        <Border Name ="ShowPlayedCardsButton" Visibility="Collapsed" VerticalAlignment="Top" CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="92" Background="White" Margin="670,56,670,0">
+            <Button Style="{StaticResource MyButtonStyle}" FontWeight="ExtraBold" FontSize="20" FontFamily="Segoe UI" BorderThickness="0" Background="Transparent" Click="ShowPlayedCards">
+                Reveal Cards
+            </Button>
+        </Border>
+
+        <Grid x:Name="titleScreen">
+            <Image Source="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\sandwich.png" Margin="175,82,1227,629"></Image>
+            <Image Source="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\bat.png" Margin="788,673,614,38"></Image>
+            <Image Source="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\potato.png" Margin="1269,586,133,125"></Image>
+            <Image Source="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\toucan.png" Margin="1053,214,349,497"></Image>
+            <Image Source="C:\Users\darre\source\repos\CreateImageCards\CreateImageCards\IconImagesAll\swimsuit.png" Margin="322,586,1080,125"></Image>
+            <Border Name ="title" CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Background="Orange" Margin="334,339,334,303">
+                <TextBlock FontFamily="Narkisim" FontWeight="ExtraBold" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap">TWO TOUCANS</TextBlock>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="NumberOfPlayersPage" Visibility="Collapsed">
+            <Border VerticalAlignment="Top"  CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="420" Background="Orange" Margin="525,242,525,0">
+                <StackPanel>
+                    <Border CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="100" Width="200" Background="White">
+                        <Button Style="{StaticResource MyButtonStyle}" Click="NoOfPlayers_Click" Content="1 Player"  BorderThickness="0" Background="Transparent"></Button>
+                    </Border>
+                    <Border CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="100" Width="200" Background="White">
+                        <Button Style="{StaticResource MyButtonStyle}" Click="NoOfPlayers_Click" Content="2 Player"  BorderThickness="0" Background="Transparent"></Button>
+                    </Border>
+                    <Border CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="100" Width="200" Background="White">
+                        <Button Style="{StaticResource MyButtonStyle}" Click="NoOfPlayers_Click" Content="3 Player"  BorderThickness="0" Background="Transparent"></Button>
+                    </Border>
+                    <Border CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="100" Width="200" Background="White">
+                        <Button Style="{StaticResource MyButtonStyle}" Click="NoOfPlayers_Click" Content="4 Player"  BorderThickness="0" Background="Transparent"></Button>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+        <Grid x:Name="GetPlayerDetails" Visibility="Collapsed" Margin="0,700,0,700">
+
+            <Border Name ="playerDetailForm" VerticalAlignment="Top"  CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="423" Background="Orange" Margin="525,-495,525,0">
+                <StackPanel >
+                    <TextBlock FontSize="30">Enter Player Details:</TextBlock>
+                    <StackPanel Name="PlayerDetailsStackPanel">
+                    
+                    </StackPanel>
+                    <Border CornerRadius="20,20,20,20" BorderBrush="Black" BorderThickness="10" Height="100" Width="200" Background="White">
+                        <Button Click="PlayerDetailsFormClick" Style="{StaticResource MyButtonStyle}" Content="Click to Begin!"  BorderThickness="0" Background="Transparent"></Button>
+                    </Border>
+                </StackPanel>
+            </Border>   
+        </Grid>
+    </Grid>
+</Window>
